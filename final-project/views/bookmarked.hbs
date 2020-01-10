@@ -1,0 +1,36 @@
+<div id="bookmarkedPage">
+
+    <h2>Your Bookmarked Reads!</h2>
+
+    <div id="addBMDiv">
+        
+        <form id="addBMForm" action="/bookmarked" method="POST">
+
+            <label class="bmLabel">Book Title: </label><input align="left" class="bmForm" type="text" name="BMtitle" value="">
+
+            <label class="bmLabel">Author: </label><input align="left" class="bmForm" type="text" name="BMauthor" value="">
+
+            <input id="addBMBtn" type="submit" name="" value="Bookmark">
+
+        </form>
+
+    </div>
+
+    <table id="bookmarkedTable">
+
+        <thead>
+            <th id="bookedTH">Your Future Reads</th>
+        </thead>
+
+        <tbody>
+            {{#each bookmarkeds}}
+                <tr>
+                    <td id="bookedTD">{{this.title}} by {{this.author}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+        
+    </table>
+
+</div>
+

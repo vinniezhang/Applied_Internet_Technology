@@ -1,0 +1,41 @@
+<div id="favoritesPage">
+
+    <h2>Your Favorite Reads!</h2>
+
+        <div id="addFavorite">
+        
+        <form action="/favorites" method="POST">
+
+            <label>Add to your favorites:</label> <br/>
+            
+            <select align="left" name="favTitle">
+                <option id="default" selected="true" disabled="disabled">Select a Favorite</option> 
+                {{#each library}}
+                    <option value="{{this.title}} by {{this.author}}">{{{this.title}}}</option>
+                {{/each}}
+            </select>
+
+            <input id="addFavBtn" type="submit" name="" value="Add!"> 
+
+        </form>
+        
+    </div>
+
+    <table id="favoritesTable">
+
+        <thead>
+            <th id="favTH">Your Top Picks</th>
+        </thead>
+
+        <tbody>
+            {{#each favorites}}
+                <tr>
+                    <td id="favTD">{{this.title}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+        
+    </table>
+
+
+</div>
